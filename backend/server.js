@@ -23,6 +23,9 @@ app.use(express.json());
 //config folder sa Mongo Db connection aa raha hai
 connectDB();
 
+app.get("/", (req, res) => {
+    res.send("API working");
+  });
 
 app.use("/api/product", productRouter);
 app.use("/api/banner/", bannerRouter);
