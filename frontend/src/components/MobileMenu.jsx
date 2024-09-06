@@ -1,9 +1,8 @@
 import React,{useContext} from "react";
-import { IoCartOutline } from "react-icons/io5";
-import { FcPortraitMode } from "react-icons/fc";
-import { FcReuse } from "react-icons/fc";
-import { FcMenu } from "react-icons/fc";
-import { FcHome } from "react-icons/fc";
+import { CiShoppingCart } from "react-icons/ci";
+import { CiUser } from "react-icons/ci";
+import { CiMenuBurger } from "react-icons/ci";
+import { CiShop } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
 
@@ -16,25 +15,25 @@ const MobileMenu = () => {
           {/* <li className='text-4xl'><FcReuse /></li> */}
           <NavLink to="/" className="flex flex-col items-center gap-1">
             <li className="text-4xl">
-              <FcHome />
+            <CiShop />
               <hr className="w-full border-none h-[1.5px] bg-gray-700 hidden" />
             </li>
           </NavLink>
           <NavLink to="/collection" className="flex flex-col items-center gap-1">
             <li className="text-4xl">
-              <FcMenu />
+            <CiMenuBurger />
               <hr className="w-full border-none h-[1.5px] bg-gray-700 hidden" />
             </li>
           </NavLink>
           <NavLink to="/orders" className="flex flex-col items-center gap-1">
             <li className="text-4xl">
-              <FcPortraitMode />
+            <CiUser />
               <hr className="w-full border-none h-[1.5px] bg-gray-700 hidden" />
             </li>
           </NavLink>
           <NavLink to="/cart" className="flex flex-col items-center gap-1 relative">
             <li className="text-4xl">
-              <IoCartOutline />
+            <CiShoppingCart />
               <p className="absolute right-[-5px] top-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[10px]">
               {totalSum}
             </p>

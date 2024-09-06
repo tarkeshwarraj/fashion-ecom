@@ -32,15 +32,15 @@ const Content = () => {
     // console.log(productItem);
   return (
 
-    <div className="py-10">
-        <h5 className='text-center '>CATEGORIES TO CART</h5>
+    <div className="pt-4">
+        <h5 className='px-4 text-gray-400 text-xl tracking-[.25em] '>CATEGORIES TO CART</h5>
    
     <div className="mt-5 flex flex-wrap">
          
             {
                 productItem.map((item, index)=>{
                     return (
-                    <div key={index} className='w-1/5'>
+                    <div key={index} className='w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5'>
                     <SliderItem 
                         key = {index}
                         id = {item._id}

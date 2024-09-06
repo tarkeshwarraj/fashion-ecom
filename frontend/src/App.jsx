@@ -26,7 +26,7 @@ const App = () => {
       <Header setShowLogin={setShowLogin} />
 
       {/* Main content area with padding for different screen sizes */}
-      <div className="px-0 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] bg-[#f1f3f6]">
+      <div className="px-0 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] bg-[#f1f3f6] overflow-hidden">
         {/* Conditionally render LoginPopup if showLogin is true */}
         {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
         <ToastContainer />
