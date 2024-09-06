@@ -6,13 +6,11 @@ import { Link } from 'react-router-dom';
 const SliderItem = ({image, id, category}) => {
     const {url} = useContext(StoreContext);
   return (
-    <Link to={`/${category}`}>
    <div className="slider-card">
     <div className="max-w-xs overflow-hidden">
       <img src={`${url}banners/${image}`} alt={`banner-${id}`} className='w-full h-full object-cover'/>
     </div>
    </div>
-   </Link>
   )
 }
 

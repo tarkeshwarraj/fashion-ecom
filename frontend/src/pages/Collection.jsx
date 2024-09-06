@@ -4,12 +4,17 @@ import axios from "axios";
 import { StoreContext } from "../context/StoreContext.jsx";
 import Sidebar from "../components/Sidebar.jsx";
 import Footer from "../components/Footer";
+import Title from "../components/Title.jsx";
+import { useLocation } from "react-router-dom";
 
 const Collection = () => {
   const { url } = useContext(StoreContext);
   const [fetchItems, setFetchItems] = useState([]);
   const [filters, setFilters] = useState({ category: [], minPrice: '', maxPrice: '' });
   const [filteredItems, setFilteredItems] = useState([]); //Store filtered products
+
+  const location = useLocation(); //Get location object
+  const initialCategory = location.state?.category; // Read the category from state if available
 
   //This categories will sent to sidebar as a props
   const categories = ["Men", "Women", "Kids", "Footwear"]; //Update categories here 
@@ -23,13 +28,17 @@ const Collection = () => {
           const allProducts = response.data.products;
           setFetchItems(allProducts);
           setFilteredItems(allProducts);
+
+          if(initialCategory){
+            setFilters((prevFilters) => ({...prevFilters, category: [initialCategory]}));
+          }
         }
       } catch (error) {
         console.error("Error fetching Products:", error);
       }
     };
     fetchData();
-  }, [url]); // Dependency array includes `url` to re-fetch if it changes
+  }, [url, initialCategory]); // Dependency array includes `url` to re-fetch if it changes
 
   // Handle filter change
   const handleFilterChange = (newFilters) => {
@@ -60,17 +69,19 @@ const Collection = () => {
 
 
   return (
-    <div className="pt-10">
+    <div className="pt-8">
+      <div className="text-gray-400 text-xl">
 
-    <hr className="h-[1.5px] bg-gray-500"/>
+      <Title text1={"COLLECTION"} text2={""}/>
+      </div>
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-6  bg-[#f1f3f6]">
       {/* SideBar */}
-      <div className="sidebar py-8">
+      <div className="sidebar py-42sm:py-6">
         <Sidebar onFilterChange={handleFilterChange} sendCategories={categories}  />
       </div>
 
 
-      <div className="py-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mx-2">
+      <div className="py-2 sm:py-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mx-2">
         {filteredItems.map((item, index) => (
           <Item
             key={item._id}

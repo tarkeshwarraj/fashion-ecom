@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import SliderItem from './SliderItem'
 import axios from 'axios';
 import { StoreContext } from "../context/StoreContext.jsx";
+import { useNavigate } from 'react-router-dom';
 
 const Content = () => {
     
     const {url} = useContext(StoreContext);
     const [productItem, setProductItem] = useState([]);
+    const navigate = useNavigate(); //Initialize useNavigate
 
     useEffect(()=>{
     const fetchProductItem = async() => {
@@ -29,6 +31,11 @@ const Content = () => {
     }
     ,[url]);
 
+    const handleItemClick = (category) => {
+        //Navigate to collection page with the category as a state or param
+        navigate(`/collection`, {state: {category}});
+    };
+
     // console.log(productItem);
   return (
 
@@ -40,7 +47,7 @@ const Content = () => {
             {
                 productItem.map((item, index)=>{
                     return (
-                    <div key={index} className='w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5'>
+                    <div key={index} className='w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5' onClick={() =>handleItemClick(item.category)}>
                     <SliderItem 
                         key = {index}
                         id = {item._id}
