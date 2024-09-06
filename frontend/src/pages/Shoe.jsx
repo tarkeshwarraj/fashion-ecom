@@ -67,7 +67,7 @@ useEffect(() => {
       </div>
 
       {/* Items */}
-      <div className="py-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="py-2 sm:py-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mx-2">
         {
           filteredItems.map((item, index) => (
             <Item

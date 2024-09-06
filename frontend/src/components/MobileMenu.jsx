@@ -1,7 +1,7 @@
 import React,{useContext} from "react";
 import { CiShoppingCart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
-import { CiMenuBurger } from "react-icons/ci";
+import { CiCircleList } from "react-icons/ci";
 import { CiShop } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
@@ -21,7 +21,7 @@ const MobileMenu = () => {
           </NavLink>
           <NavLink to="/collection" className="flex flex-col items-center gap-1">
             <li className="text-4xl">
-            <CiMenuBurger />
+            <CiCircleList />
               <hr className="w-full border-none h-[1.5px] bg-gray-700 hidden" />
             </li>
           </NavLink>

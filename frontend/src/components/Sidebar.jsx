@@ -51,7 +51,7 @@ const Sidebar = ({ onFilterChange, sendCategories }) => {
   };
 
   return (
-    <div className="w-full sm:w-64 h-full p-4 border-r border-t bg-[#fff] border-none rounded-md">
+    <div className="w-full sm:w-64 h-full p-4 border-r border-t bg-[#fff] border-none rounded-md md:mt-8">
       <div className="flex justify-between items-center md:block">
         <h2 className="text-xl font-semibold mb-4">Filter Products</h2>
         <button

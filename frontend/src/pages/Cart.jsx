@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./Cart.css"; // Assuming additional styles if needed
 import { RiDeleteBin5Line } from "react-icons/ri";
 import CartTotal from "../components/CartTotal";
 import { StoreContext } from "../context/StoreContext.jsx";
 import axios from "axios";
 import Title from "../components/Title.jsx";
+import { FcExpand, FcCollapse } from "react-icons/fc";
+import { FaRupeeSign } from "react-icons/fa6";
+
 
 const Cart = () => {
+  const [isFilterVisible, setIsFilterVisible] = useState(false); // Default visible on md and above
   const { url, token, loadCartData, cartItems, fetchItems } =
     useContext(StoreContext); // Get fetchItems from context
 
@@ -69,6 +72,11 @@ const Cart = () => {
       console.error("Failed to update address", error);
     }
   };
+
+  const toggleFilterVisibility = () => {
+    setIsFilterVisible(!isFilterVisible);
+  };
+
 
   //calculate Subtotal and Total
   const calculateTotals = () => {
@@ -170,8 +178,14 @@ const Cart = () => {
         <div className="cart-items md:col-span-4 space-y-8">
           {/* Address Form */}
           <div className="address bg-white p-6 shadow-md rounded-md">
+            <div className="flex justify-between items-center">
             <h2 className="text-xl font-semibold mb-4">Address</h2>
-            <div className="grid gap-4">
+            <button type="button" onClick={toggleFilterVisibility}>
+                  {isFilterVisible ? <FcCollapse /> : <FcExpand />}
+                </button>
+            </div>
+            {isFilterVisible && (
+            <div className={`grid gap-4 overflow-hidden transition-max-height duration-500 ease-in-out ${isFilterVisible ? 'max-h-96' : 'max-h-0'}`}>
               <input
                 type="text"
                 name="name"
@@ -235,6 +249,7 @@ const Cart = () => {
                 className="border p-2 rounded-md"
               />
             </div>
+            )}
           </div>
 
           {/* Cart Items */}
@@ -252,7 +267,7 @@ const Cart = () => {
                 <div>
                   <p className="text-xs sm:text-lg font-medium">{item.name}</p>
                   <div className="flex items-center gap-5 mt-2">
-                    <p>${item.price}</p>
+                    <p>₹{item.price}</p>
                     <p className="px-2 sm:px-3 py-1 border bg-slate-50">
                       {item.size}
                     </p>
@@ -312,9 +327,9 @@ const Cart = () => {
             <div className="cart-total mb-4 sm:p-10 p-5">
               <Title text1={"Total"} text2={""}/>
               {/* Add details for total price, etc. here */}
-              <p>Subtotal:  ${subtotal.toFixed(2)}</p>
-              <p>Shipping Fee: ${shippingFee.toFixed(2)}</p>
-              <p>Total: ${total.toFixed(2)}</p>
+              <p>Subtotal: ₹{subtotal.toFixed(2)}</p>
+              <p>Shipping Fee: ₹{shippingFee.toFixed(2)}</p>
+              <p>Total: ₹{total.toFixed(2)}</p>
             </div>
             <div className="border-t-2">
               <div className="text-end px-5">
