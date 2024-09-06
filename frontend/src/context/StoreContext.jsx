@@ -7,7 +7,7 @@ const StoreContext = createContext();
 
 const StoreContextProvider = ({ children }) => {
   const currency = "$";
-  const url = "https://fashion-ecom-backend.onrender.com/";
+  const url = "https://fashion-ecom-back.onrender.com/";
   const [token, setToken] = useState("");
   const [fetchItems, setFetchItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);
