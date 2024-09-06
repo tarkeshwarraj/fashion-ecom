@@ -1,0 +1,14 @@
+.sidebar{
+    min-width: 20%;
+    min-height: 100vh;
+    border: 1.5px solid #a9a9a9;
+}
+
+
+ul li{
+    padding: 1vw;
+    cursor: pointer;
+    background-color: rgb(171, 168, 168);
+    border: 1px solid black;
+    margin: 1rem 0 1rem 0;
+}

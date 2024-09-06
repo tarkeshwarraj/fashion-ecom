@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&display=swap");
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family:Outfit;
+  /* font-family: Inter, -apple-system, Helvetica, Arial, sans-serif; */
+}
+
+a.active hr {
+  display: block;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .banner-container{
+    height: calc(60vh - 1.5rem);
+    padding: 0px;
+  }
+
+  .left-side{
+    display: none;
+  }
+  
+}
+
+.left-side{
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.offers p span {
+  color: #212121;
+    font-weight: 500;
+    padding-right: 4px;
+}
+
+.offers p{
+  color: rgb(33, 33, 33);
+}
