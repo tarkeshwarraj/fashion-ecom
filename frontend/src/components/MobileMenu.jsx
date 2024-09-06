@@ -7,7 +7,7 @@ import { FcHome } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
 
-const Mobilemenu = () => {
+const MobileMenu = () => {
     const {totalSum} = useContext(StoreContext);
   return (
     <div className="sticky bottom-0 bg-white shadow-lg md:hidden w-full">
@@ -47,4 +47,4 @@ const Mobilemenu = () => {
   );
 };
 
-export default Mobilemenu;
+export default MobileMenu;

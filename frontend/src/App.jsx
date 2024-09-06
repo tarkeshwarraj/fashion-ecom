@@ -16,7 +16,7 @@ import Verify from "./pages/Verify.jsx";
 import MyOrder from "./pages/MyOrder.jsx";
 import Profile from "./pages/Profile.jsx";
 import Search from "./components/Search.jsx";
-import Mobilemenu from "./components/Mobilemenu.jsx";
+import MobileMenu from "./components/MobileMenu.jsx";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -44,7 +44,7 @@ const App = () => {
         </Routes>
       </div>
       {/* Mobile menu only for smaller screens */}
-      <Mobilemenu />
+      <MobileMenu />
     </div>
   );
 };
