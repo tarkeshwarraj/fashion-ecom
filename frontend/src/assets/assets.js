@@ -13,6 +13,7 @@ import star_dull_icon from "./star_dull_icon.png";
 import star_icon from "./star_icon.png";
 import stripe_logo from "./stripe_logo.png";
 import support_img from "./support_img.png";
+import deal from "./deal.png";
 
 export const assets = {
   logo,
@@ -30,4 +31,5 @@ export const assets = {
   star_icon,
   stripe_logo,
   support_img,
+  deal
 };

@@ -10,7 +10,7 @@ import { StoreContext } from "../context/StoreContext";
 const MobileMenu = () => {
     const {totalSum} = useContext(StoreContext);
   return (
-    <div className="sticky bottom-0 bg-white shadow-lg md:hidden w-full">
+    <div className="fixed bottom-0  bg-white shadow-lg md:hidden w-full">
       <div>
         <ul className="flex justify-evenly py-2">
           {/* <li className='text-4xl'><FcReuse /></li> */}

@@ -52,8 +52,8 @@ const Banner = () => {
       <Slider {...settings}>
         {filteredBanners.map((banner) =>(
           <div key={banner._id} >
-            <div className="w-full h-full p-1">
-              <img src={`${url}banners/${banner.image}`} alt={`banner-${banner._id}`} className="object-cover w-full h-full" />
+            <div className="w-full h-56 p-1">
+              <img src={`${url}banners/${banner.image}`} alt={`banner-${banner._id}`} className="object-fit w-full h-full" />
             </div>
           </div>
         ))}

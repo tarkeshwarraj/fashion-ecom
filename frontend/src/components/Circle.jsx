@@ -7,6 +7,7 @@ import SliderItem from './SliderItem.jsx';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { assets } from '../assets/assets.js';
 
 const Circle = () => {
   const {url} = useContext(StoreContext);
@@ -42,12 +43,38 @@ const Circle = () => {
     autoplaySpeed: 3000,
     arrows: true,
     rtl: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        }
+      }
+    ]
   };
 
 
   return (
     <div>
         <div className="py-8">
+
+          <div className="deal-banner w-full md:hidden pb-3">
+            <img src={assets.deal} alt="" />
+          </div>
+
+
           <Slider {...settings}>
 
          {
