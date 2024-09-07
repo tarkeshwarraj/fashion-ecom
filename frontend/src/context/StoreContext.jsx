@@ -13,6 +13,7 @@ const StoreContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [search, setSearch] = useState('');
   const [showSearch, setShowSearch] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
   //FetchItems
 
@@ -105,6 +106,8 @@ const StoreContextProvider = ({ children }) => {
     showSearch,
     setSearch,
     setShowSearch,
+    setShowLogin,
+    showLogin
   };
 
   //%% IMPORTANT FOR LOGIN

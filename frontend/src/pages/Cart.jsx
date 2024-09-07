@@ -252,6 +252,18 @@ const Cart = () => {
             )}
           </div>
 
+          {!token ? (<div className="flex justify-center">
+          <div className="group-hover:block dropdown-menu right-0 pt-4">
+                <div className="flex flex-col border-none gap-2 w-36 py-2.5 px-3 text-black text-center  rounded relative z-10">
+                  <p
+                    className=" hover:text-black"
+                  >
+                    Login Please....
+                  </p>
+                </div>
+              </div>
+        </div>):(null)}
+
           {/* Cart Items */}
           {cartProductDetails.map((item, index) => (
             <div
@@ -327,9 +339,9 @@ const Cart = () => {
             <div className="cart-total mb-4 sm:p-10 p-5">
               <Title text1={"Total"} text2={""}/>
               {/* Add details for total price, etc. here */}
-              <p>Subtotal: ₹{subtotal.toFixed(2)}</p>
-              <p>Shipping Fee: ₹{shippingFee.toFixed(2)}</p>
-              <p>Total: ₹{total.toFixed(2)}</p>
+              <p className="p-1 md:p-3">Subtotal: ₹{subtotal.toFixed(2)}</p>
+              <p className="p-1 md:p-3">Shipping Fee: ₹{shippingFee.toFixed(2)}</p>
+              <p className="p-1 md:p-3">Total: ₹{total.toFixed(2)}</p>
             </div>
             <div className="border-t-2">
               <div className="text-end px-5">

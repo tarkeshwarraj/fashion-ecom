@@ -6,9 +6,10 @@ import { FcProcess } from "react-icons/fc";
 import { FcShipped } from "react-icons/fc";
 import { FaHandHoldingHeart } from "react-icons/fa6";
 import { FcCancel } from "react-icons/fc";
+import LoginPopup from "../components/LoginPopup.jsx";
 
 const MyOrder = () => {
-  const { url, token } = useContext(StoreContext);
+  const { url, token, showLogin, setShowLogin   } = useContext(StoreContext);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,7 +34,7 @@ const MyOrder = () => {
 
   useEffect(() => {
     fetchOrders(); // Fetch orders when the component mounts
-  }, [orders]);
+  }, [token]);
 
   return (
     <div className="py-10">
@@ -41,6 +42,18 @@ const MyOrder = () => {
         <div className="title text-center mb-8">
           <Title text1={"My"} text2={"Orders"} />
         </div>
+
+        {!token ? (<div className="flex justify-center">
+          <div className="group-hover:block dropdown-menu right-0 pt-4">
+                <div className="flex flex-col border-none gap-2 w-36 py-2.5 px-3 text-black text-center  rounded relative z-10">
+                  <p
+                    className=" hover:text-black"
+                  >
+                    Login Please....
+                  </p>
+                </div>
+              </div>
+        </div>):(null)}
 
         {loading ? (
           <p className="text-center text-gray-500">Loading...</p> // Display loading message while fetching

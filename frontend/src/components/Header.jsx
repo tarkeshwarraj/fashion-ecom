@@ -7,7 +7,7 @@ import './Header.css';
 
 
 const Header = ({ setShowLogin }) => {
-  const { token, setToken, cartItems,search, showSearch, setSearch,setShowSearch,totalSum } = useContext(StoreContext);
+  const { token, setToken, cartItems,search, showSearch, setSearch,setShowSearch,totalSum, } = useContext(StoreContext);
 
   const navigate = useNavigate();
 
@@ -77,7 +77,7 @@ const Header = ({ setShowLogin }) => {
 
             {!token ? (
               <div className="absolute hidden group-hover:block dropdown-menu right-0 pt-4">
-                <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded relative z-10">
+                <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-white text-gray-500 rounded relative z-10">
                   <p
                     onClick={() => setShowLogin(true)}
                     className="cursor-pointer hover:text-black"
