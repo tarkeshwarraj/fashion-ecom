@@ -1,0 +1,20 @@
+@media (max-width:687px){
+    .menu-ul{
+        display: flex;
+        flex-direction: column;
+        justify-content:start;
+        align-items: start;
+        position:absolute;
+        border: 1px solid black;
+       height: 100vh;
+       background-color: aqua;
+
+    }
+    .menu-li{
+        padding: 16px;
+        background-color: aqua;
+        border: 1px solid black;
+        overflow: hidden;
+    }
+}
+

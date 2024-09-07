@@ -3,6 +3,8 @@ import { assets } from "../assets/assets";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
 import Search from "./Search";
+import './Header.css';
+
 
 const Header = ({ setShowLogin }) => {
   const { token, setToken, cartItems,search, showSearch, setSearch,setShowSearch,totalSum } = useContext(StoreContext);
@@ -24,36 +26,36 @@ const Header = ({ setShowLogin }) => {
             {/* <p className="rounded-full aspect-square bg-orange-500 "></p> */}
           </div>
         </Link>
-        <div className="">
-          <ul className=" sm:flex flex-row gap-5 text-sm hidden">
+        <div className="menu relative">
+          <ul className="menu-ul md:flex md:flex-row  gap-4 md:gap-5 text-sm hidden">
             {/* Navlink Converts in a tag to the browser */}
-            <NavLink to="/" className="flex flex-col items-center gap-1">
+            <NavLink to="/" className="menu-li flex flex-col items-center gap-1">
               <p>HOME</p>
               <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
             </NavLink>
             <NavLink
               to="/collection"
-              className="flex flex-col items-center gap-1"
+              className="menu-li flex flex-col items-center gap-1"
             >
               <p>COLLECTION</p>
               <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
             </NavLink>
-            <NavLink to="/shoes">
+            <NavLink to="/shoes"  className="menu-li flex flex-col items-center gap-1">
               <li>SHOES</li>
               <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
             </NavLink>
-            <NavLink to="/about">
+            <NavLink to="/about" className="menu-li flex flex-col items-center gap-1">
               <li>ABOUT US</li>
-              <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+              <hr className=" w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
             </NavLink>
-            <NavLink to="/contact">
+            <NavLink to="/contact" className="menu-li flex flex-col items-center gap-1">
               <li>CONTACT US</li>
               <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden " />
             </NavLink>
           </ul>
         </div>
-        <div className="flex flex-row gap-6 ">
-          <div className="search relative hidden md:block">
+        <div className="flex flex-row gap-6">
+          <div className="search md:relative ">
          {showSearch ? <Search /> : 
           <img
           onClick={()=>setShowSearch(true)}

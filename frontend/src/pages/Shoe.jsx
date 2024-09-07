@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar'
 import axios from 'axios';
 import { StoreContext } from '../context/StoreContext';
 import Item from '../components/Item';
+import Title from "../components/Title.jsx";
 
 const Shoe = () => {
   const {url} = useContext(StoreContext);
@@ -60,9 +61,16 @@ useEffect(() => {
 }, [filters, fetchItems]);
 
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
+    <div className="pt-8">
+
+<div className="text-gray-400 text-xl">
+        <Title text1={"SHOES"} text2={""} />
+      </div>
+    
+    <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 bg-[#f1f3f6]">
+      
       {/*sidebar*/}
-      <div className="sidebar py-8">
+      <div className="sidebar">
         <Sidebar onFilterChange={handleFilterChange} sendCategories={categories} />
       </div>
 
@@ -76,13 +84,14 @@ useEffect(() => {
             name={item.name}
             image={item.images}
             price={item.price}
-          />
+            />
 
           ))
           
         }
       </div>
     </div>
+          </div>
   )
 }
 

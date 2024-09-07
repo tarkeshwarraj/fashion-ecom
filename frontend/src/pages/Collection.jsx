@@ -81,7 +81,7 @@ const Collection = () => {
       </div>
       <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 bg-[#f1f3f6]">
         {/* Sidebar */}
-        <div className="sidebar py-42 sm:py-6">
+        <div className="sidebar">
           <Sidebar onFilterChange={handleFilterChange} sendCategories={categories} />
         </div>
 
