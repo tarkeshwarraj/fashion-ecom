@@ -21,7 +21,7 @@ const Search = () => {
       <div className="w-4 md:w-10">
 
       <img
-        onClick={() => setShowSearch(false)}
+        onClick={() =>{ setShowSearch(false), setSearch()}}
         src={assets.cross_icon}
         className="inline w-4 cursor-pointer ml-2"
         alt=""
