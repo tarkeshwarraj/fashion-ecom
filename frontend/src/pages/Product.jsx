@@ -119,8 +119,8 @@ const Product = () => {
                 src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
                 alt=""
               />
-              <span> Bank Offer</span> Get ₹50 Instant Discount on first
-              Flipkart UPI transaction on order of ₹200 and above
+              <span> Bank Offer</span> Get $50 Instant Discount on first
+              Flipkart UPI transaction on order of $200 and above
             </p>{" "}
             <br />
             <p>
@@ -129,8 +129,8 @@ const Product = () => {
                 src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
                 alt=""
               />
-              <span> Bank Offer</span> 10% off up to ₹1,000 on BOBCARD
-              Transactions, on orders of ₹5,000 and above
+              <span> Bank Offer</span> 10% off up to $1,000 on BOBCARD
+              Transactions, on orders of $5,000 and above
             </p>{" "}
             <br />
             <p>
@@ -139,7 +139,7 @@ const Product = () => {
                 src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
                 alt=""
               />
-              <span> Special Price</span> Get at flat ₹199
+              <span> Special Price</span> Get at flat $199
             </p>{" "}
             <br />
           </div>

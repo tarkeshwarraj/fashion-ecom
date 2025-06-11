@@ -279,7 +279,7 @@ const Cart = () => {
                 <div>
                   <p className="text-xs sm:text-lg font-medium">{item.name}</p>
                   <div className="flex items-center gap-5 mt-2">
-                    <p>₹{item.price}</p>
+                    <p>${item.price}</p>
                     <p className="px-2 sm:px-3 py-1 border bg-slate-50">
                       {item.size}
                     </p>
@@ -339,9 +339,9 @@ const Cart = () => {
             <div className="cart-total mb-4 sm:p-10 p-5">
               <Title text1={"Total"} text2={""}/>
               {/* Add details for total price, etc. here */}
-              <p className="p-1 md:p-3">Subtotal: ₹{subtotal.toFixed(2)}</p>
-              <p className="p-1 md:p-3">Shipping Fee: ₹{shippingFee.toFixed(2)}</p>
-              <p className="p-1 md:p-3">Total: ₹{total.toFixed(2)}</p>
+              <p className="p-1 md:p-3">Subtotal: ${subtotal.toFixed(2)}</p>
+              <p className="p-1 md:p-3">Shipping Fee: ${shippingFee.toFixed(2)}</p>
+              <p className="p-1 md:p-3">Total: ${total.toFixed(2)}</p>
             </div>
             <div className="border-t-2">
               <div className="text-end px-5">
